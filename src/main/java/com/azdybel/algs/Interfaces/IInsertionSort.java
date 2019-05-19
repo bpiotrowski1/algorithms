@@ -7,4 +7,5 @@ public interface IInsertionSort<T> {
     int searchIndexOfElement(int element);
     int binarySearchIndexOfElement(int element);
     void run();
+    void sort();
 }

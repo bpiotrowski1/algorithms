@@ -82,7 +82,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
         sort();
     }
 
-    private void sort() {
+    public void sort() {
         for (int i = sortedSize; i < Constants.TABLE; i++) {
             if (table[i - 1] > table[i]) {
                 insertElementAt(searchIndexOfElement(table[i]), table[i]);
