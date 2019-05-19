@@ -5,5 +5,6 @@ public interface IInsertionSort<T> {
     T getElementAtIndex(int index);
     void insertElementAt(int index, int element);
     int searchIndexOfElement(int element);
+    int binarySearchIndexOfElement(int element);
     void run();
 }

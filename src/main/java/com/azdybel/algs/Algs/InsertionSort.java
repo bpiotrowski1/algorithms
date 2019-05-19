@@ -46,6 +46,29 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     }
 
     @Override
+    public int binarySearchIndexOfElement(int element) {
+        int i = 0, j = Constants.TABLE, search;
+        while (i <= j) {
+            search = ((i + j) / 2);
+            if (table[search] < element) {
+                i = search + 1;
+            } else if (table[search] > element) {
+                j = search - 1;
+            } else {
+                return search;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public void getElements() {
+        for(int i=0; i<Constants.TABLE; i++) {
+            System.out.print(table[i] + " ");
+        }
+    }
+
+    @Override
     public void setup() {
         Random rand = new Random(System.nanoTime());
         for (int i = 0; i < Constants.START; i++) {
@@ -70,7 +93,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     public void addRandomValues(int n) {
         int tmp;
         sortedSize = 1;
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             Random rand = new Random();
             tmp = rand.nextInt(Constants.RANDOM_VALUES);
             insertElementAt(searchIndexOfElement(tmp), tmp);
