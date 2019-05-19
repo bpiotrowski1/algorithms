@@ -3,6 +3,7 @@ package com.azdybel.algs.Structs;
 import com.azdybel.algs.Interfaces.IMyList;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MyList implements IMyList {
     private int size = 0;
@@ -25,21 +26,30 @@ public class MyList implements IMyList {
         incSize();
     }
 
-    //TODO
     @Override
     public void addOrdered(ListElement listElement) {
         if (getSize() == 0) {
             this.setHead(listElement);
+            this.setLast(listElement);
             listElement.next = listElement;
             listElement.prev = listElement;
         } else {
             ListElement iterator = this.getHead();
-            do {
-                iterator = iterator.next;
-            } while (iterator != this.head || iterator.getValue() < listElement.getValue());
+            if (listElement.getValue() <= iterator.getValue()) {
+                this.setHead(listElement);
+            } else {
+                AtomicBoolean isLast = new AtomicBoolean(false);
+                while (listElement.getValue() > iterator.getValue() && !isLast.get()) {
+                    iterator = iterator.next;
+                    if (iterator.equals(this.getHead())) {
+                        this.setLast(listElement);
+                        isLast.set(true);
+                    }
+                }
+            }
             listElement.prev = iterator.prev;
             listElement.next = iterator;
-            iterator.prev.next = listElement;
+            listElement.prev.next = listElement;
             iterator.prev = listElement;
         }
         incSize();
