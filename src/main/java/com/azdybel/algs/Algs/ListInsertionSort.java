@@ -18,10 +18,10 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
             if (i == 20) {
                 list.add(twenty);
             } else {
-                list.add(new ListElement(rand.nextInt(50)));
+                list.addOrdered(new ListElement(rand.nextInt(50)));
             }
         }
-        list.remove(twenty);
+        //list.remove(twenty);
         ListElement iterator = list.getHead();
         do {
             System.out.print(iterator.getValue() + " ");

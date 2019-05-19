@@ -14,12 +14,34 @@ public class MyList implements IMyList {
     public void add(ListElement listElement) {
         if (getSize() == 0) {
             this.setHead(listElement);
+            listElement.next = listElement;
+            listElement.prev = listElement;
         } else {
             this.getLast().next = listElement;
             listElement.prev = this.getLast();
             listElement.next = this.getHead();
         }
         this.setLast(listElement);
+        incSize();
+    }
+
+    //TODO
+    @Override
+    public void addOrdered(ListElement listElement) {
+        if (getSize() == 0) {
+            this.setHead(listElement);
+            listElement.next = listElement;
+            listElement.prev = listElement;
+        } else {
+            ListElement iterator = this.getHead();
+            do {
+                iterator = iterator.next;
+            } while (iterator != this.head || iterator.getValue() < listElement.getValue());
+            listElement.prev = iterator.prev;
+            listElement.next = iterator;
+            iterator.prev.next = listElement;
+            iterator.prev = listElement;
+        }
         incSize();
     }
 
@@ -34,9 +56,9 @@ public class MyList implements IMyList {
 
     @Override
     public ListElement find(int value) {
-        ListElement iterator = head;
+        ListElement iterator = this.getHead();
         do {
-            if(iterator.getValue() == value) {
+            if (iterator.getValue() == value) {
                 return iterator;
             }
             iterator = iterator.next;
@@ -47,9 +69,9 @@ public class MyList implements IMyList {
     @Override
     public int findIndex(int value) {
         int index = 0;
-        ListElement iterator = head;
+        ListElement iterator = this.getHead();
         do {
-            if(iterator.getValue() == value) {
+            if (iterator.getValue() == value) {
                 break;
             }
             iterator = iterator.next;
