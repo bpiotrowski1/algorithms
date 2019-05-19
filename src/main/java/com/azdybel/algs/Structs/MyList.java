@@ -34,12 +34,28 @@ public class MyList implements IMyList {
 
     @Override
     public ListElement find(int value) {
+        ListElement iterator = head;
+        do {
+            if(iterator.getValue() == value) {
+                return iterator;
+            }
+            iterator = iterator.next;
+        } while (iterator.next != head);
         return null;
     }
 
     @Override
-    public ListElement findIndex(int value) {
-        return null;
+    public int findIndex(int value) {
+        int index = 0;
+        ListElement iterator = head;
+        do {
+            if(iterator.getValue() == value) {
+                break;
+            }
+            iterator = iterator.next;
+            index++;
+        } while (iterator.next != head);
+        return index;
     }
 
     public int getSize() {

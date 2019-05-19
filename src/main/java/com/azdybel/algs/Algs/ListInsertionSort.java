@@ -23,10 +23,10 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
         }
         list.remove(twenty);
         ListElement iterator = list.getHead();
-        while (iterator.next != list.getHead()) {
+        do {
             System.out.print(iterator.getValue() + " ");
             iterator = iterator.next;
-        }
+        } while (iterator.next != list.getHead());
     }
 
     @Override
