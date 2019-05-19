@@ -9,6 +9,11 @@ public class SimpleAlgorithm implements IAlgorithmRunner {
     }
 
     @Override
+    public void addRandomValues(int n) {
+
+    }
+
+    @Override
     public void run() {
         String someString = new String("Sometext");
     }
