@@ -16,7 +16,7 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
         ListElement twenty = new ListElement(20);
         for (int i = 0; i < Constants.START; i++) {
             if (i == 20) {
-                list.add(twenty);
+                list.addOrdered(twenty);
             } else {
                 list.addOrdered(new ListElement(rand.nextInt(50)));
             }
@@ -61,7 +61,19 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
 
     @Override
     public int binarySearchIndexOfElement(int element) {
-        return 0;
+        int left = 0, right = list.getSize(), middle, index;
+        while(left < right) {
+            middle = (left + right)/2;
+            if(list.findIndex(middle).getValue() < element) {
+                left = middle + 1;
+            } else {
+                right = middle;
+            }
+        }
+        if(list.findIndex(left).getValue() == element) {
+            return left;
+        }
+        return -1;
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.azdybel.algs.Structs;
 
 import com.azdybel.algs.Interfaces.IMyList;
 
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MyList implements IMyList {
@@ -77,18 +76,24 @@ public class MyList implements IMyList {
     }
 
     @Override
-    public int findIndex(int value) {
-        int index = 0;
+    public ListElement findIndex(int index) {
         ListElement iterator = this.getHead();
-        do {
-            if (iterator.getValue() == value) {
-                break;
-            }
+        int i = 0;
+        while(i < index) {
             iterator = iterator.next;
-            index++;
-        } while (iterator.next != head);
-        return index;
+            i++;
+        }
+        return iterator;
     }
+
+//    @Override
+//    public void getElements() {
+//        ListElement iterator = this.getHead();
+//        for(int i=0; i < size; i++) {
+//            System.out.print(iterator.getValue());
+//            iterator = iterator.next;
+//        }
+//    }
 
     public int getSize() {
         return size;

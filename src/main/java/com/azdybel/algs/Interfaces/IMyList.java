@@ -9,5 +9,6 @@ public interface IMyList {
     void addOrdered(ListElement listElement);
     void remove(ListElement listElement);
     ListElement find(int value);
-    int findIndex(int value);
+    ListElement findIndex(int value);
+    //void getElements();
 }
