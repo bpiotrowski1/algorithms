@@ -8,6 +8,7 @@ import java.util.Random;
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
     private int[] table = new int[Constants.TABLE];
     private int sortedSize = 1;
+    private boolean binarySearch = false;
 
     @Override
     public int getSortedSize() {
@@ -97,7 +98,15 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
         for (int i = 0; i < n; i++) {
             Random rand = new Random();
             tmp = rand.nextInt(Constants.RANDOM_VALUES);
-            insertElementAt(searchIndexOfElement(tmp), tmp);
+            if(binarySearch) {
+                insertElementAt(binarySearchIndexOfElement(tmp), tmp);
+            } else {
+                insertElementAt(searchIndexOfElement(tmp), tmp);
+            }
         }
+    }
+
+    public void setBinarySearch(boolean binarySearch) {
+        this.binarySearch = binarySearch;
     }
 }
