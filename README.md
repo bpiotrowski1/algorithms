@@ -1,10 +1,10 @@
 # Algorithms
 
-## Autor : Aleksander Zdybel
+## Autor : Błażej Piotrowski
 
 
 ### Budowanie projektu : 
-##### git clone https://github.com/ZdybelA/Algorithms.git
+##### git clone https://github.com/bpiotrowski1/algorithms.git
 ##### cd Algorithms/
 ##### mvn clean package
 ### Uruchomienie projektu :

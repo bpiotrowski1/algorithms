@@ -48,13 +48,13 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public int binarySearchIndexOfElement(int element) {
-        int i = 0, j = Constants.TABLE, search, similar = -1;
-        while (i <= j) {
-            search = ((i + j) / 2);
+        int left = 0, right = Constants.TABLE, search, similar = -1;
+        while (left <= right) {
+            search = ((left + right) / 2);
             if (table[search] < element) {
-                i = search + 1;
+                left = search + 1;
             } else if (table[search] > element) {
-                j = search - 1;
+                right = search - 1;
                 similar = table[search];
             } else {
                 return search;
@@ -83,7 +83,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
         sort();
     }
 
-    private void sort() {
+    public void sort() {
         for (int i = sortedSize; i < Constants.TABLE; i++) {
             if (table[i - 1] > table[i]) {
                 insertElementAt(searchIndexOfElement(table[i]), table[i]);
