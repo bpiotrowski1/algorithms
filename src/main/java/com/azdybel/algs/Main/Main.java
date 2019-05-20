@@ -8,6 +8,8 @@ import static com.azdybel.algs.Helpers.TimeMeasurementHelper.ExecutionTimeMeasur
 public class Main {
     public static void main(String[] args) {
         IAlgorithmRunner insertionSort = new InsertionSort();
+        IAlgorithmRunner insertionSortBinary = new InsertionSort();
+
 
 //        InsertionSort intSort = new InsertionSort();
 //        ExecutionTimeMeasure(intSort, true);
@@ -15,6 +17,9 @@ public class Main {
 //        System.out.println("INDEX: " + intSort.binarySearchIndexOfElement(30));
 //        intSort.getElements();
 
+        insertionSortBinary.setBinarySearch(true);
+        ExecutionTimeMeasure(insertionSortBinary, true);
+        System.out.println();
         ExecutionTimeMeasure(insertionSort, true);
         //insertionSort.addRandomValues(1000);
         //ExecutionTimeMeasure(insertionSort, true);
