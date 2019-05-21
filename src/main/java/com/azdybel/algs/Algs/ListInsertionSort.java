@@ -14,7 +14,7 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
     public void setup() {
         Random rand = new Random(System.nanoTime());
         ListElement twenty = new ListElement(20);
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < Constants.ARRAY; i++) {
             if (i == 20) {
                 list.addOrdered(twenty);
             } else {
@@ -36,6 +36,11 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
 
     @Override
     public void getElements() {
+
+    }
+
+    @Override
+    public void setBinarySearch(boolean binarySearch) {
 
     }
 
