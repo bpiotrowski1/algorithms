@@ -19,7 +19,7 @@ public class BubbleSort implements IAlgorithmRunner, IBubbleSort {
         table = new int[Constants.ARRAY];
         Random rand = new Random(System.nanoTime());
         for (int i = 0; i < table.length; i++) {
-            this.table[i] = rand.nextInt(50);
+            this.table[i] = rand.nextInt(Constants.RAND);
         }
     }
 
