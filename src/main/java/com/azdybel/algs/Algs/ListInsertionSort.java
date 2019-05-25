@@ -10,48 +10,31 @@ import java.util.Random;
 public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<ListElement>, IAlgorithmRunner {
     private MyList list = new MyList();
 
-    @Override
-    public void setup() {
-        Random rand = new Random(System.nanoTime());
-        ListElement twenty = new ListElement(20);
+    public ListInsertionSort(int[] table) {
         for (int i = 0; i < Constants.ARRAY; i++) {
-            if (i == 20) {
-                list.addOrdered(twenty);
-            } else {
-                list.addOrdered(new ListElement(rand.nextInt(50)));
-            }
+            list.addOrdered(new ListElement(table[i]));
         }
-        //list.remove(twenty);
         ListElement iterator = list.getHead();
         do {
-            System.out.print(iterator.getValue() + " ");
             iterator = iterator.next;
         } while (iterator.next != list.getHead());
     }
 
     @Override
-    public void addRandomValues(int n) {
-
+    public void setup() {
+        Random rand = new Random(System.nanoTime());
+        for (int i = 0; i < Constants.ARRAY; i++) {
+            list.addOrdered(new ListElement(rand.nextInt(50)));
+        }
     }
 
     @Override
     public void getElements() {
-
-    }
-
-    @Override
-    public void setBinarySearch(boolean binarySearch) {
-
-    }
-
-    @Override
-    public int getSortedSize() {
-        return 0;
-    }
-
-    @Override
-    public ListElement getElementAtIndex(int index) {
-        return null;
+        ListElement iterator = list.getHead();
+        do {
+            System.out.print(iterator.getValue() + " ");
+            iterator = iterator.next;
+        } while (iterator.next != list.getHead());
     }
 
     @Override
@@ -66,7 +49,7 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
 
     @Override
     public int binarySearchIndexOfElement(int element) {
-        int left = 0, right = list.getSize(), middle, index;
+        int left = 0, right = list.getSize(), middle;
         while(left < right) {
             middle = (left + right)/2;
             if(list.findIndex(middle).getValue() < element) {

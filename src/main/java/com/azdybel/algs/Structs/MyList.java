@@ -1,13 +1,15 @@
 package com.azdybel.algs.Structs;
 
 import com.azdybel.algs.Interfaces.IMyList;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MyList implements IMyList {
     private int size = 0;
-    private ListElement head;
-    private ListElement last;
+    @Getter @Setter private ListElement head;
+    @Getter @Setter private ListElement last;
 
 
     @Override
@@ -86,15 +88,6 @@ public class MyList implements IMyList {
         return iterator;
     }
 
-//    @Override
-//    public void getElements() {
-//        ListElement iterator = this.getHead();
-//        for(int i=0; i < size; i++) {
-//            System.out.print(iterator.getValue());
-//            iterator = iterator.next;
-//        }
-//    }
-
     public int getSize() {
         return size;
     }
@@ -105,21 +98,5 @@ public class MyList implements IMyList {
 
     public void decSize() {
         this.size--;
-    }
-
-    public ListElement getHead() {
-        return head;
-    }
-
-    public void setHead(ListElement head) {
-        this.head = head;
-    }
-
-    public ListElement getLast() {
-        return last;
-    }
-
-    public void setLast(ListElement last) {
-        this.last = last;
     }
 }

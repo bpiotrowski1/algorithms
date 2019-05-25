@@ -8,12 +8,12 @@ public class TimeMeasurementHelper {
     public static float ExecutionTimeMeasure(IAlgorithmRunner testAlgorithm, Boolean useConsolePrint) {
         if (useConsolePrint) System.out.println("Time measurement started ");
         long startTime = System.nanoTime();
-        testAlgorithm.setup();
+        //testAlgorithm.setup();
         for (int i = 0; i < EXECUTION_NUMBER; i++) {
             testAlgorithm.run();
         }
         float elapsedTime = System.nanoTime() - startTime;
-        if (useConsolePrint) System.out.printf("Algorithm took :\n %f secons", elapsedTime / Math.pow(10, 9));
+        if (useConsolePrint) System.out.printf("Algorithm took :\n %f secons\n", elapsedTime / Math.pow(10, 9));
         return elapsedTime;
     }
 
