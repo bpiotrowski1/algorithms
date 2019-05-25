@@ -7,14 +7,15 @@ import com.azdybel.algs.Statics.Constants;
 import java.util.Random;
 
 public class BubbleSort implements IAlgorithmRunner, IBubbleSort {
-    private int[] table = new int[Constants.TABLE];
+    private int[] table;
 
-    public BubbleSort() {
-        setup();
+    public BubbleSort(int[] table) {
+        this.table = table;
     }
 
     @Override
     public void setup() {
+        table = new int[Constants.TABLE];
         Random rand = new Random(System.nanoTime());
         for (int i = 0; i < Constants.START; i++) {
             this.table[i] = rand.nextInt(50);

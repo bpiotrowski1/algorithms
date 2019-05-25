@@ -2,13 +2,18 @@ package com.azdybel.algs.Algs;
 
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
 import com.azdybel.algs.Statics.Constants;
+import lombok.Setter;
 
 import java.util.Random;
 
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
-    private int[] table = new int[Constants.TABLE];
+    private int[] table;
     private int sortedSize = 1;
-    private boolean binarySearch = false;
+    @Setter private boolean binarySearch = false;
+
+    public InsertionSort(int[] table) {
+        this.table = table;
+    }
 
     @Override
     public void insertElementAt(int index, int element) {
@@ -38,13 +43,13 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public int binarySearchIndexOfElement(int element) {
-        int left = 0, right = Constants.TABLE, search, similar = -1;
-        while (left <= right) {
+        int left = 1, right = table.length, search, similar = -1;
+        while (left < right) {
             search = ((left + right) / 2);
             if (table[search] < element) {
                 left = search + 1;
             } else if (table[search] > element) {
-                right = search - 1;
+                right = search;
                 similar = table[search];
             } else {
                 return search;
@@ -62,6 +67,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public void setup() {
+        table = new int[Constants.TABLE];
         Random rand = new Random(System.nanoTime());
         for (int i = 0; i < Constants.START; i++) {
             this.table[i] = rand.nextInt(50);
@@ -76,7 +82,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     public void sort() {
         for (int i = sortedSize; i < Constants.TABLE; i++) {
             if (table[i - 1] > table[i]) {
-                insertElementAt(searchIndexOfElement(table[i]), table[i]);
+                insertElementAt(binarySearchIndexOfElement(table[i]), table[i]);
             }
             sortedSize++;
         }
@@ -94,9 +100,5 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
                 insertElementAt(searchIndexOfElement(tmp), tmp);
             }
         }
-    }
-
-    public void setBinarySearch(boolean binarySearch) {
-        this.binarySearch = binarySearch;
     }
 }
