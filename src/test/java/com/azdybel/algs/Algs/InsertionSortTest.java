@@ -36,7 +36,7 @@ public class InsertionSortTest {
 
     @Test
     public void insertElementAt() {
-        Integer integer = 1001;
+        int integer = 1001;
         insertionSort.insertElementAt(5, integer);
         assertEquals(integer, insertionSort.getElementAtIndex(5));
         insertionSort2.insertElementAt(500, integer);

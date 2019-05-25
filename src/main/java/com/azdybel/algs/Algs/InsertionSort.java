@@ -2,15 +2,16 @@ package com.azdybel.algs.Algs;
 
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
 import com.azdybel.algs.Statics.Constants;
+import com.azdybel.algs.Structs.ListElement;
+import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Random;
 
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
-    private int[] table;
+    @Getter private int[] table;
     private int sortedSize = 1;
-    @Setter
-    private boolean binarySearch = false;
+    @Setter private boolean binarySearch = false;
 
     public InsertionSort(int[] table) {
         this.table = table;
@@ -101,5 +102,9 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
                 insertElementAt(searchIndexOfElement(tmp), tmp);
             }
         }
+    }
+
+    public int getElementAtIndex(int index) {
+        return table[index];
     }
 }
