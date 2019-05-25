@@ -10,6 +10,10 @@ import java.util.Random;
 public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<ListElement>, IAlgorithmRunner {
     private MyList list = new MyList();
 
+    public ListInsertionSort() {
+        setup();
+    }
+
     public ListInsertionSort(int[] table) {
         for (int i = 0; i < Constants.ARRAY; i++) {
             list.addOrdered(new ListElement(table[i]));
