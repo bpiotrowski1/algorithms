@@ -3,11 +3,12 @@ package com.azdybel.algs.Algs;
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
 import com.azdybel.algs.Interfaces.IBubbleSort;
 import com.azdybel.algs.Statics.Constants;
+import lombok.Getter;
 
 import java.util.Random;
 
 public class BubbleSort implements IAlgorithmRunner, IBubbleSort {
-    private int[] table;
+    @Getter private int[] table;
 
     public BubbleSort(int[] table) {
         this.table = table;
@@ -15,16 +16,16 @@ public class BubbleSort implements IAlgorithmRunner, IBubbleSort {
 
     @Override
     public void setup() {
-        table = new int[Constants.TABLE];
+        table = new int[Constants.ARRAY];
         Random rand = new Random(System.nanoTime());
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < table.length; i++) {
             this.table[i] = rand.nextInt(50);
         }
     }
 
     @Override
     public void getElements() {
-        for (int i = 0; i < Constants.TABLE; i++) {
+        for (int i = 0; i < table.length; i++) {
             System.out.print(table[i] + " ");
         }
     }

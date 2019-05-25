@@ -9,7 +9,8 @@ import java.util.Random;
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
     private int[] table;
     private int sortedSize = 1;
-    @Setter private boolean binarySearch = false;
+    @Setter
+    private boolean binarySearch = false;
 
     public InsertionSort(int[] table) {
         this.table = table;
@@ -30,7 +31,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     @Override
     public int searchIndexOfElement(int element) {
         int firstGreater = -1;
-        for (int i = 0; i < Constants.TABLE; i++) {
+        for (int i = 0; i < table.length; i++) {
             if (this.table[i] > element) {
                 firstGreater = i;
                 break;
@@ -60,16 +61,16 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public void getElements() {
-        for(int i=0; i<Constants.TABLE; i++) {
+        for (int i = 0; i < table.length; i++) {
             System.out.print(table[i] + " ");
         }
     }
 
     @Override
     public void setup() {
-        table = new int[Constants.TABLE];
+        table = new int[Constants.ARRAY];
         Random rand = new Random(System.nanoTime());
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < table.length; i++) {
             this.table[i] = rand.nextInt(50);
         }
     }
@@ -80,7 +81,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     }
 
     public void sort() {
-        for (int i = sortedSize; i < Constants.TABLE; i++) {
+        for (int i = sortedSize; i < table.length; i++) {
             if (table[i - 1] > table[i]) {
                 insertElementAt(binarySearchIndexOfElement(table[i]), table[i]);
             }
@@ -94,7 +95,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
         for (int i = 0; i < n; i++) {
             Random rand = new Random();
             tmp = rand.nextInt(Constants.RANDOM_VALUES);
-            if(binarySearch) {
+            if (binarySearch) {
                 insertElementAt(binarySearchIndexOfElement(tmp), tmp);
             } else {
                 insertElementAt(searchIndexOfElement(tmp), tmp);

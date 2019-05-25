@@ -11,7 +11,7 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
     private MyList list = new MyList();
 
     public ListInsertionSort(int[] table) {
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < Constants.ARRAY; i++) {
             list.addOrdered(new ListElement(table[i]));
         }
         ListElement iterator = list.getHead();
@@ -23,7 +23,7 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
     @Override
     public void setup() {
         Random rand = new Random(System.nanoTime());
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < Constants.ARRAY; i++) {
             list.addOrdered(new ListElement(rand.nextInt(50)));
         }
     }

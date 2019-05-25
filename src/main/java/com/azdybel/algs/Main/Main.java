@@ -12,9 +12,9 @@ import static com.azdybel.algs.Helpers.TimeMeasurementHelper.ExecutionTimeMeasur
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = new int[Constants.TABLE];
+        int[] array = new int[Constants.ARRAY];
         Random rand = new Random(System.nanoTime());
-        for (int i = 0; i < Constants.START; i++) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = rand.nextInt(50);
         }
 
