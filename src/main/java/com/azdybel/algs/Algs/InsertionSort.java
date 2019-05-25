@@ -11,16 +11,6 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     private boolean binarySearch = false;
 
     @Override
-    public int getSortedSize() {
-        return this.sortedSize;
-    }
-
-    @Override
-    public Integer getElementAtIndex(int index) {
-        return this.table[index];
-    }
-
-    @Override
     public void insertElementAt(int index, int element) {
         int tmp;
         for (int i = sortedSize; i >= 1; i--) {

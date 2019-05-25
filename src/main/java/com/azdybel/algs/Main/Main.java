@@ -1,5 +1,6 @@
 package com.azdybel.algs.Main;
 
+import com.azdybel.algs.Algs.BubbleSort;
 import com.azdybel.algs.Algs.InsertionSort;
 import com.azdybel.algs.Algs.ListInsertionSort;
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
@@ -19,8 +20,15 @@ public class Main {
 
 
         /* --- LISTA --- */
-        ListInsertionSort myList = new ListInsertionSort();
-        myList.setup();
+        //ListInsertionSort myList = new ListInsertionSort();
+        //myList.setup();
+
+        /* --- BUBBLE SORT --- */
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.getElements();
+        System.out.println();
+        bubbleSort.sort();
+        bubbleSort.getElements();
     }
 
 }

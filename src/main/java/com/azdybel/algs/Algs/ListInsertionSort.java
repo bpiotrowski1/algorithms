@@ -30,23 +30,8 @@ public class ListInsertionSort implements com.azdybel.algs.Interfaces.IInsertion
     }
 
     @Override
-    public void addRandomValues(int n) {
-
-    }
-
-    @Override
     public void getElements() {
 
-    }
-
-    @Override
-    public int getSortedSize() {
-        return 0;
-    }
-
-    @Override
-    public ListElement getElementAtIndex(int index) {
-        return null;
     }
 
     @Override
