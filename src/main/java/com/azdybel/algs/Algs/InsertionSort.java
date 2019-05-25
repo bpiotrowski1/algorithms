@@ -13,6 +13,10 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     private int sortedSize = 1;
     @Setter private boolean binarySearch = false;
 
+    public InsertionSort() {
+        setup();
+    }
+
     public InsertionSort(int[] table) {
         this.table = table;
     }

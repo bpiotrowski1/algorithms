@@ -12,27 +12,35 @@ import static com.azdybel.algs.Helpers.TimeMeasurementHelper.ExecutionTimeMeasur
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = new int[Constants.ARRAY];
-        Random rand = new Random(System.nanoTime());
-        for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(50);
-        }
-
-        IAlgorithmRunner listInsertionSort = new ListInsertionSort(array);
-        IAlgorithmRunner insertionSort = new InsertionSort(array);
-        IAlgorithmRunner bubbleSort = new BubbleSort(array);
-
-        System.out.println("List insertion sort: ");
-        ExecutionTimeMeasure(listInsertionSort, true);
-        System.out.println("\nInsertion Sort: ");
-        ExecutionTimeMeasure(insertionSort, true);
-        System.out.println("\nBubble sort: ");
-        ExecutionTimeMeasure(bubbleSort, true);
+        /* --- TIME COMPARE --- */
+//        int[] array = new int[Constants.ARRAY];
+//        Random rand = new Random(System.nanoTime());
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = rand.nextInt(50);
+//        }
+//
+//        IAlgorithmRunner listInsertionSort = new ListInsertionSort(array);
+//        IAlgorithmRunner insertionSort = new InsertionSort(array);
+//        IAlgorithmRunner bubbleSort = new BubbleSort(array);
+//
+//        System.out.println("List insertion sort: ");
+//        ExecutionTimeMeasure(listInsertionSort, true);
+//        System.out.println("\nInsertion Sort: ");
+//        ExecutionTimeMeasure(insertionSort, true);
+//        System.out.println("\nBubble sort: ");
+//        ExecutionTimeMeasure(bubbleSort, true);
 
 
         /* --- LISTA --- */
-        //ListInsertionSort myList = new ListInsertionSort();
-        //myList.setup();
+//        ListInsertionSort myList = new ListInsertionSort();
+//        myList.setup();
+
+        /* --- INSERTION SORT --- */
+//        InsertionSort insertionSort = new InsertionSort();
+//        insertionSort.getElements();
+//        System.out.println();
+//        insertionSort.run();
+//        insertionSort.getElements();
 
         /* --- BUBBLE SORT --- */
 //        BubbleSort bubbleSort = new BubbleSort();
