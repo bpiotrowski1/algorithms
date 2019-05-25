@@ -8,19 +8,16 @@ import static com.azdybel.algs.Helpers.TimeMeasurementHelper.ExecutionTimeMeasur
 
 public class Main {
     public static void main(String[] args) {
-//        InsertionSort intSort = new InsertionSort();
-//        ExecutionTimeMeasure(intSort, true);
+//        InsertionSort insertionSort = new InsertionSort();
+//        ExecutionTimeMeasure(insertionSort, true);
 //        System.out.println();
-//        System.out.println("INDEX: " + intSort.binarySearchIndexOfElement(30));
-//        intSort.getElements();
-//        ExecutionTimeMeasure(insertionSort, true);
-//        insertionSort.addRandomValues(1000);
-//        ExecutionTimeMeasure(insertionSort, true);
+        //System.out.println("INDEX: " + insertionSort.binarySearchIndexOfElement(30));
+        //insertionSort.getElements();
 
 
-        /* --- LISTA --- */
-        ListInsertionSort myList = new ListInsertionSort();
-        myList.setup();
+//        /* --- LISTA --- */
+//        ListInsertionSort myList = new ListInsertionSort();
+//        myList.setup();
     }
 
 }
