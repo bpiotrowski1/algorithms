@@ -45,35 +45,26 @@ public class QuickSort implements IAlgorithmRunner, IQuickSort {
 
     @Override
     public int partition(int left, int right) {
-        int pp = table[(left + right) / 2];
-        int i = left;
-        int j = right;
-
-        while (true) {
-            while (table[j] > pp) {
-                j--;
-            }
-            while (table[i] < pp) {
-                i++;
-            }
-            if (i < j) {
-                swap(i, j);
-                i++;
-                j--;
-            } else {
-                return j;
-            }
+        int partitionPoint = (left + right) / 2;
+        int i = left, j = right - 1;
+        swap(partitionPoint, right);
+        while (i != j) {
+            while (table[i] <= table[right] && i < j) i++;
+            while (table[j] >= table[right] && j > i) j--;
+            swap(i, j);
         }
+        if (table[right] < table[i]) {
+            swap(i, right);
+            return i;
+        }
+        return right;
     }
 
     @Override
     public void quickSort(int left, int right) {
-        int pp;
-        if (left < right) {
-            pp = partition(left, right);
-            quickSort(left, pp);
-            quickSort(pp + 1, right);
-        }
+        int partitionPoint = partition(left, right);
+        if (left < partitionPoint - 1) quickSort(left, partitionPoint - 1);
+        if (right > partitionPoint + 1) quickSort(partitionPoint + 1, right);
     }
 
     @Override

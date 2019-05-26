@@ -45,7 +45,6 @@ public class Main {
         System.out.println("\nQuick sort: ");
         ExecutionTimeMeasure(quickSort, true);
 
-
         /* --- LISTA --- */
 //        ListInsertionSort listInsertionSort = new ListInsertionSort();
 //        listInsertionSort.getElements();
