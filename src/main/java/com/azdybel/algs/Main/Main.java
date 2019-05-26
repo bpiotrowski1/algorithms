@@ -1,9 +1,6 @@
 package com.azdybel.algs.Main;
 
-import com.azdybel.algs.Algs.BubbleSort;
-import com.azdybel.algs.Algs.CountingSort;
-import com.azdybel.algs.Algs.InsertionSort;
-import com.azdybel.algs.Algs.ListInsertionSort;
+import com.azdybel.algs.Algs.*;
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
 import com.azdybel.algs.Statics.Constants;
 
@@ -25,26 +22,28 @@ public class Main {
         IAlgorithmRunner insertionSort = new InsertionSort(array);
         IAlgorithmRunner bubbleSort = new BubbleSort(array);
         IAlgorithmRunner countingSort = new CountingSort(array);
+        IAlgorithmRunner quickSort = new QuickSort(array);
 
-        System.out.println("list insertion sort vs insertion sort");
-        Compare(listInsertionSort, insertionSort);
-        System.out.println("list insertion sort vs couting sort");
-        Compare(listInsertionSort, countingSort);
-        System.out.println("insertion sort vs bubble sort");
-        Compare(insertionSort, bubbleSort);
-        System.out.println("counting sort vs bubble sort");
-        Compare(countingSort, bubbleSort);
+//        System.out.println("list insertion sort vs insertion sort");
+//        Compare(listInsertionSort, insertionSort);
+//        System.out.println("list insertion sort vs couting sort");
+//        Compare(listInsertionSort, countingSort);
+//        System.out.println("insertion sort vs bubble sort");
+//        Compare(insertionSort, bubbleSort);
+//        System.out.println("counting sort vs bubble sort");
+//        Compare(countingSort, bubbleSort);
 
         /* --- TIMES TO SORT --- */
-//        System.out.println("List insertion sort: ");
-//        ExecutionTimeMeasure(listInsertionSort, true);
-//        System.out.println("\nInsertion Sort: ");
-//        ExecutionTimeMeasure(insertionSort, true);
-//        System.out.println("\nBubble sort: ");
-//        ExecutionTimeMeasure(bubbleSort, true);
-//        System.out.println("\nCounting sort: ");
-//        ExecutionTimeMeasure(countingSort, true);
-
+        System.out.println("List insertion sort: ");
+        ExecutionTimeMeasure(listInsertionSort, true);
+        System.out.println("\nInsertion Sort: ");
+        ExecutionTimeMeasure(insertionSort, true);
+        System.out.println("\nBubble sort: ");
+        ExecutionTimeMeasure(bubbleSort, true);
+        System.out.println("\nCounting sort: ");
+        ExecutionTimeMeasure(countingSort, true);
+        System.out.println("\nQuick sort: ");
+        ExecutionTimeMeasure(quickSort, true);
 
         /* --- LISTA --- */
 //        ListInsertionSort listInsertionSort = new ListInsertionSort();
@@ -74,6 +73,13 @@ public class Main {
 //        System.out.println();
 //        countingSort.run();
 //        countingSort.getElementsOut();
+
+        /* --- QUICK SORT --- */
+//        QuickSort quickSort = new QuickSort();
+//        quickSort.getElements();
+//        System.out.println();
+//        quickSort.run();
+//        quickSort.getElements();
     }
 
 }
