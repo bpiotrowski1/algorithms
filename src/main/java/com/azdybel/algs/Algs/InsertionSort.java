@@ -11,9 +11,6 @@ import java.util.Random;
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
     @Getter
     private int[] table;
-    private int sortedSize = 1;
-    @Setter
-    private boolean binarySearch = false;
 
     public InsertionSort() {
         setup();
@@ -25,47 +22,47 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public void insertElementAt(int index, int element) {
-        for (int i = table.length; i > index; i--) {
-            if (i == table.length) {
-                table[i] = table[i - 1];
-            } else {
-                int tmp = table[i];
-                table[i] = table[i - 1];
-                table[i - 1] = tmp;
-            }
-        }
         table[index] = element;
     }
 
     @Override
     public int searchIndexOfElement(int element) {
-        int firstGreater = -1;
         for (int i = 0; i < table.length; i++) {
-            if (this.table[i] > element) {
-                firstGreater = i;
-                break;
-            } else if (this.table[i] == element) {
+            if (table[i] == element) {
                 return i;
             }
         }
-        return firstGreater;
+        return -1;
     }
 
     @Override
     public int binarySearchIndexOfElement(int element) {
-        int left = 1, right = table.length, search, similar = -1;
-        while (left < right) {
-            search = ((left + right) / 2);
-            if (table[search] < element) {
-                left = search + 1;
-            } else if (table[search] > element) {
-                right = search;
-                similar = table[search];
+        int left = 0, right = table.length - 1, p;
+        while (left <= right) {
+            p = (left + right) / 2;
+            if (table[p] < element) {
+                left = p + 1;
+            } else if (table[p] > element) {
+                right = p - 1;
             } else {
-                return search;
+                return p;
             }
         }
-        return similar;
+        return -1;
+    }
+
+    @Override
+    public void sort() {
+        int n = table.length;
+        for (int i = 1; i < n; ++i) {
+            int key = table[i];
+            int j = i - 1;
+            while (j >= 0 && table[j] > key) {
+                table[j + 1] = table[j];
+                j = j - 1;
+            }
+            table[j + 1] = key;
+        }
     }
 
     @Override
@@ -78,7 +75,7 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     @Override
     public void setup() {
         table = new int[Constants.ARRAY];
-        Random rand = new Random(System.nanoTime());
+        Random rand = new Random(Constants.RAND);
         for (int i = 0; i < table.length; i++) {
             this.table[i] = rand.nextInt(50);
         }
@@ -87,32 +84,5 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
     @Override
     public void run() {
         sort();
-    }
-
-    public void sort() {
-        for (int i = sortedSize; i < table.length; i++) {
-            if (table[i - 1] > table[i]) {
-                insertElementAt(binarySearchIndexOfElement(table[i]), table[i]);
-            }
-            sortedSize++;
-        }
-    }
-
-    public void addRandomValues(int n) {
-        int tmp;
-        sortedSize = 1;
-        for (int i = 0; i < n; i++) {
-            Random rand = new Random();
-            tmp = rand.nextInt(Constants.RANDOM_VALUES);
-            if (binarySearch) {
-                insertElementAt(binarySearchIndexOfElement(tmp), tmp);
-            } else {
-                insertElementAt(searchIndexOfElement(tmp), tmp);
-            }
-        }
-    }
-
-    public int getElementAtIndex(int index) {
-        return table[index];
     }
 }

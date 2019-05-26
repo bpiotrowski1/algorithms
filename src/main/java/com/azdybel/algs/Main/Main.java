@@ -19,29 +19,29 @@ public class Main {
             array[i] = rand.nextInt(Constants.RAND);
         }
 
-        IAlgorithmRunner listInsertionSort = new ListInsertionSort(array);
-        IAlgorithmRunner insertionSort = new InsertionSort(array);
-        IAlgorithmRunner bubbleSort = new BubbleSort(array);
-        IAlgorithmRunner countingSort = new CountingSort(array);
-        IAlgorithmRunner quickSort = new QuickSort(array);
-        IAlgorithmRunner binarySearchTree = new BinarySearchTree();
-        IAlgorithmRunner heapSort = new HeapSort();
+//        IAlgorithmRunner listInsertionSort = new ListInsertionSort(array);
+//        IAlgorithmRunner insertionSort = new InsertionSort(array);
+//        IAlgorithmRunner bubbleSort = new BubbleSort(array);
+//        IAlgorithmRunner countingSort = new CountingSort(array);
+//        IAlgorithmRunner quickSort = new QuickSort(array);
+//        IAlgorithmRunner binarySearchTree = new BinarySearchTree();
+//        IAlgorithmRunner heapSort = new HeapSort();
 
         /* --- TIMES TO SORT --- */
-        System.out.println("List insertion sort: ");
-        ExecutionTimeMeasure(listInsertionSort, true);
-        //System.out.println("\nInsertion Sort: ");
-        //ExecutionTimeMeasure(insertionSort, true);
-        System.out.println("\nBubble sort: ");
-        ExecutionTimeMeasure(bubbleSort, true);
-        System.out.println("\nCounting sort: ");
-        ExecutionTimeMeasure(countingSort, true);
-        System.out.println("\nQuick sort: ");
-        ExecutionTimeMeasure(quickSort, true);
-        System.out.println("\nBST: ");
-        ExecutionTimeMeasure(binarySearchTree, true);
-        System.out.println("\nHeap sort: ");
-        ExecutionTimeMeasure(heapSort, true);
+//        System.out.println("List insertion sort: ");
+//        ExecutionTimeMeasure(listInsertionSort, true);
+//        //System.out.println("\nInsertion Sort: ");
+//        //ExecutionTimeMeasure(insertionSort, true);
+//        System.out.println("\nBubble sort: ");
+//        ExecutionTimeMeasure(bubbleSort, true);
+//        System.out.println("\nCounting sort: ");
+//        ExecutionTimeMeasure(countingSort, true);
+//        System.out.println("\nQuick sort: ");
+//        ExecutionTimeMeasure(quickSort, true);
+//        System.out.println("\nBST: ");
+//        ExecutionTimeMeasure(binarySearchTree, true);
+//        System.out.println("\nHeap sort: ");
+//        ExecutionTimeMeasure(heapSort, true);
 
 //        System.out.println("list insertion sort vs insertion sort");
 //        Compare(listInsertionSort, insertionSort);
@@ -61,11 +61,11 @@ public class Main {
 //        System.out.println();
 
         /* --- INSERTION SORT --- */
-//        InsertionSort insertionSort = new InsertionSort();
-//        insertionSort.getElements();
-//        System.out.println();
-//        insertionSort.run();
-//        insertionSort.getElements();
+        InsertionSort insertionSort = new InsertionSort();
+        insertionSort.getElements();
+        System.out.println();
+        insertionSort.run();
+        insertionSort.getElements();
 
         /* --- BUBBLE SORT --- */
 //        BubbleSort bubbleSort = new BubbleSort();
