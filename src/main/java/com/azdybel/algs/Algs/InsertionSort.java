@@ -9,9 +9,11 @@ import lombok.Setter;
 import java.util.Random;
 
 public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort<Integer>, IAlgorithmRunner {
-    @Getter private int[] table;
+    @Getter
+    private int[] table;
     private int sortedSize = 1;
-    @Setter private boolean binarySearch = false;
+    @Setter
+    private boolean binarySearch = false;
 
     public InsertionSort() {
         setup();
@@ -23,14 +25,16 @@ public class InsertionSort implements com.azdybel.algs.Interfaces.IInsertionSort
 
     @Override
     public void insertElementAt(int index, int element) {
-        int tmp;
-        for (int i = sortedSize; i >= 1; i--) {
-            if (table[i - 1] > table[i]) {
-                tmp = table[i - 1];
-                table[i - 1] = table[i];
-                table[i] = tmp;
+        for (int i = table.length; i > index; i--) {
+            if (i == table.length) {
+                table[i] = table[i - 1];
+            } else {
+                int tmp = table[i];
+                table[i] = table[i - 1];
+                table[i - 1] = tmp;
             }
         }
+        table[index] = element;
     }
 
     @Override
