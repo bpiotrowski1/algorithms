@@ -3,6 +3,7 @@ package com.azdybel.algs.Main;
 import com.azdybel.algs.Algs.*;
 import com.azdybel.algs.Interfaces.IAlgorithmRunner;
 import com.azdybel.algs.Statics.Constants;
+import com.azdybel.algs.Structs.Stack;
 import com.azdybel.algs.Trees.BinarySearchTree;
 import com.azdybel.algs.Trees.HeapSort;
 
@@ -30,8 +31,8 @@ public class Main {
         /* --- TIMES TO SORT --- */
 //        System.out.println("List insertion sort: ");
 //        ExecutionTimeMeasure(listInsertionSort, true);
-//        //System.out.println("\nInsertion Sort: ");
-//        //ExecutionTimeMeasure(insertionSort, true);
+//        System.out.println("\nInsertion Sort: ");
+//        ExecutionTimeMeasure(insertionSort, true);
 //        System.out.println("\nBubble sort: ");
 //        ExecutionTimeMeasure(bubbleSort, true);
 //        System.out.println("\nCounting sort: ");
@@ -61,11 +62,11 @@ public class Main {
 //        System.out.println();
 
         /* --- INSERTION SORT --- */
-        InsertionSort insertionSort = new InsertionSort();
-        insertionSort.getElements();
-        System.out.println();
-        insertionSort.run();
-        insertionSort.getElements();
+//        InsertionSort insertionSort = new InsertionSort();
+//        insertionSort.getElements();
+//        System.out.println();
+//        insertionSort.run();
+//        insertionSort.getElements();
 
         /* --- BUBBLE SORT --- */
 //        BubbleSort bubbleSort = new BubbleSort();
@@ -98,6 +99,18 @@ public class Main {
 //        System.out.println();
 //        heapSort.sort();
 //        heapSort.getElements();
+
+        /* --- STACK --- */
+        Stack stack = new Stack(5);
+        System.out.println(stack.empty());
+        stack.push(4);
+        stack.push(3);
+        stack.push(5);
+        stack.printStack();
+        System.out.println();
+        System.out.println(stack.pop());
+        System.out.println(stack.top());
+        stack.printStack();
     }
 
 }
